@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Request Letter</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+
+  <style>
+    body {
+      background-color: #042741;
+      color: white;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #042741;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      display: block;
+      width: 300px;
+      margin: 15px auto;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #042741;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #20b386;
+    }
+
+    .highlight {
+      background-color: #02120d;
+    }
+
+    .highlight:hover {
+      background-color: #010907;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+      <div class="form-container">
+        <h4 class="text-center mb-4">Customer Request Letter Online</h4>
+        <form id="submit-to-google-sheet">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input class="form-control" type="text" name="name" id="name" required />
+          </div>
+ 
+          <div class="form-group">
+              <label for="nic_number">NIC Number:</label>
+              <input class="form-control" type="text" name="nic_number" id="nic_number" required />
+            </div>
+ 
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" name="email" id="email" required />
+          </div>
+ 
+          <div class="form-group">
+            <label for="contact_number">Contact Number:</label>
+            <input class="form-control" type="text" name="contact_number" id="contact_number" required />
+          </div>
+ 
+          <div class="form-group">
+            <label for="agreement_number">Agreement Number:</label>
+            <input class="form-control" type="text" name="agreement_number" id="agreement_number" required />
+          </div>
+ 
+         
+ 
+          <div class="form-group">
+            <label for="branch">Branch:</label>
+            <select class="form-control" name="branch" id="branch" required>
+              <option value="" disabled selected hidden>Choose Branch</option>
+              <option value="Chilaw">Chilaw</option>
+              <option value="Negombo">Negombo</option>
+              <option value="Ganemulla">Ganemulla</option>
+              <option value="Kaduruwela">Kaduruwela</option>
+              <option value="Ambalanthota">Ambalanthota</option>
+              <option value="Kuliyapitiya">Kuliyapitiya</option>
+              <option value="Galewela">Galewela</option>
+              <option value="Avissawella">Avissawella</option>
+              <option value="Kalpitiya">Kalpitiya</option>
+              <option value="Kurunegala">Kurunegala</option>
+              <option value="Kadawatha">Kadawatha</option>
+              <option value="Dambulla">Dambulla</option>
+              <option value="NuwaraEliya">NuwaraEliya</option>
+              <option value="Hingurakgoda">Hingurakgoda</option>
+              <option value="Malabe">Malabe</option>
+              <option value="Kegalle">Kegalle</option>
+              <option value="Ampara">Ampara</option>
+              <option value="Embilipitiya">Embilipitiya</option>
+              <option value="Aluthgama">Aluthgama</option>
+              <option value="BorellaBranch">BorellaBranch</option>
+              <option value="Rajagiriya722SuperBranch">Rajagiriya722SuperBranch</option>
+              <option value="Akuressa">Akuressa</option>
+              <option value="Ambalangoda">Ambalangoda</option>
+              <option value="Athurugiriya">Athurugiriya</option>
+              <option value="Badulla">Badulla</option>
+              <option value="Balangoda">Balangoda</option>
+              <option value="Chankanai">Chankanai</option>
+              <option value="Chavakachcheri">Chavakachcheri</option>
+              <option value="Chunnakam">Chunnakam</option>
+              <option value="Dehiattakandiya">Dehiattakandiya</option>
+              <option value="Deniyaya">Deniyaya</option>
+              <option value="Galgamuwa">Galgamuwa</option>
+              <option value="Gampola">Gampola</option>
+              <option value="Hatton">Hatton</option>
+              <option value="Homagama">Homagama</option>
+              <option value="Kaduwela">Kaduwela</option>
+              <option value="Kalutara">Kalutara</option>
+              <option value="Kaluwanchikudy">Kaluwanchikudy</option>
+              <option value="Kiribathgoda">Kiribathgoda</option>
+              <option value="Kirindiwela">Kirindiwela</option>
+              <option value="Kohuwala">Kohuwala</option>
+              <option value="Kurumankadu">Kurumankadu</option>
+              <option value="Mahiyanganaya">Mahiyanganaya</option>
+              <option value="Mannar">Mannar</option>
+              <option value="Matale">Matale</option>
+              <option value="Medawachchiya">Medawachchiya</option>
+              <option value="Monaragala">Monaragala</option>
+              <option value="Mulankavil">Mulankavil</option>
+              <option value="Nawalapitiya">Nawalapitiya</option>
+              <option value="Nikaweratiya">Nikaweratiya</option>
+              <option value="Nittambuwa">Nittambuwa</option>
+              <option value="Panadura">Panadura</option>
+              <option value="Parakramapura">Parakramapura</option>
+              <option value="Passara">Passara</option>
+              <option value="Piliyandala">Piliyandala</option>
+              <option value="PointPedro">PointPedro</option>
+              <option value="Pugoda">Pugoda</option>
+              <option value="Puthukudyirippu">Puthukudyirippu</option>
+              <option value="Puttalam2ndBranch">Puttalam2ndBranch</option>
+              <option value="Ragala">Ragala</option>
+              <option value="Rikillagaskada">Rikillagaskada</option>
+              <option value="Thalawakele">Thalawakele</option>
+              <option value="Thirunelvely">Thirunelvely</option>
+              <option value="Thissamaharama">Thissamaharama</option>
+              <option value="Trincomalee2ndBranch">Trincomalee2ndBranch</option>
+              <option value="Udappuwa">Udappuwa</option>
+              <option value="Welimada">Welimada</option>
+              <option value="Wellawaya">Wellawaya</option>
+              <option value="Wennappuwa">Wennappuwa</option>
+              <option value="Jaffna 2nd Branch">Jaffna 2nd Branch</option>
+              <option value="Tambuttegama">Tambuttegama</option>
+              <option value="Bogawantalawa">Bogawantalawa</option>
+              <option value="Kalmunai">Kalmunai</option>
+              <option value="Palaviya">Palaviya</option>
+              <option value="Mathugama">Mathugama</option>
+ 
+            </select>
+          </div>
+ 
+          <div class="form-group">
+            <label for="letter_type">Request Letter Type:</label>
+            <select class="form-control" name="letter_type" id="letter_type" required>
+              <option value="" disabled selected hidden>Choose Letter Type</option>
+              <option value="Settlement Invoice">Settlement Invoice</option>
+              <option value="No Arrears Letter">No Arrears Letter</option>
+              <option value="No Objection Letter for insurance">No Objection Letter for insurance</option>
+              <option value="Contract Close Letter">Contract Close Letter</option>
+              <option value="Tax Letter">Tax Letter</option>
+             
+            </select>
+          </div>
+ 
+          <div class="form-group">
+              <label for="request_delivery_type">Letter request delivey mode:</label>
+              <select class="form-control" name="request_delivery_type" id="request_delivery_type" required>
+                <option value="" disabled selected hidden>Choose Letter Type</option>
+                <option value="Sent to Email">Sent to Email</option>
+                <option value="Qurity to Branch">Qurity to Branch</option>
+              </select>
+          </div>
+ 
+         
+          <div class="form-group">
+            <label for="payment_slip">Attach Payment Slip:</label>
+            <input class="form-control-file" type="file" name="payment_slip" id="payment_slip" required />
+          </div>
+ 
+          <div class="form-group form-check">
+            <input class="form-check-input" type="checkbox" id="ex" required />
+            <label class="form-check-label" for="ex">
+              By checking this box I certify that I agree with the data terms and policies.
+            </label>
+          </div>
+ 
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          <button onclick="handlmainpage()">Main Page</button>
+         
+
+         
+         
+        </form>
+      </div>
+    </div>
+ 
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzA4kkA2CNNuSZaVKFIbEx3X8n5BrmeNTP4I_N_Ti3f4vQcCHwtnT6Sof85pwmvwTar4w/exec';
+      //const scriptURL = 'https://script.google.com/macros/s/AKfycbxYFyqVjNQGJJDJjbU-JG53mjVt5p6fPdusdLp6eglO-QOpSGA3nToHfzxQQwEiLaEJ/exec'; // <-- Replace with your Web App URL
+      const form = document.getElementById('submit-to-google-sheet');
+ 
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+ 
+        const ex = document.getElementById('ex').checked ? 'Yes' : 'No';
+        formData.append('ex', ex);
+ 
+        const file = document.getElementById('payment_slip').files[0];
+ 
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const base64 = event.target.result.split(',')[1];
+            const payload = new FormData();
+ 
+            payload.append('name', formData.get('name'));
+            payload.append('email', formData.get('email'));
+            payload.append('contact_number', formData.get('contact_number'));
+            payload.append('agreement_number', formData.get('agreement_number'));
+            payload.append('nic_number', formData.get('nic_number'));
+            payload.append('branch', formData.get('branch'));
+            payload.append('letter_type', formData.get('letter_type'));
+            payload.append('request_delivery_type', formData.get('request_delivery_type'));
+            payload.append('ex', ex);
+            payload.append('payment_slip', JSON.stringify({
+              filename: file.name,
+              mimeType: file.type,
+              bytes: base64
+            }));
+ 
+            fetch(scriptURL, { method: 'POST', body: payload })
+              .then(response => response.json())
+              .then(data => {
+                if (data.status === 'success') {
+                  swal("Submitted Successfully!", "Your Reference Number: " + data.reference_number, "success");
+                  form.reset();
+                } else {
+                  swal("Error", data.message || "Something went wrong!", "error");
+                }
+              })
+              .catch(error => {
+                swal("Error", "Something went wrong. Please try again!", "error");
+              });
+          };
+          reader.readAsDataURL(file);
+        } else {
+          swal("Error", "Please attach the payment slip!", "error");
+        }
+      });
+    function handlmainpage() {
+      // Redirect to the Customer Request form page
+      window.location.href = "index.html";
+    }
+ 
+    </script>
+  </body>
+  </html>
