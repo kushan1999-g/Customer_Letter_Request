@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Customer Letter Request (Sample Module)</title>
+  <style>
+    body {
+      background-color: #042741;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    button {
+      display: block;
+      width: 300px;
+      margin: 15px auto;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #042741;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #20b386;
+    }
+
+    .highlight {
+      background-color: #02120d;
+    }
+
+    .highlight:hover {
+      background-color: #010907;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">DON Finance Company PLC</div>
+  <h1>Online Customer Letter Request (Sample Module)</h1>
+
+ 
+  <button onclick="handleRequest()">Customer Request</button>
+  <button onclick="handleInquiry()">Customer Status Inquiry</button>
+
+  <script>
+   function handleRequest() {
+      // Redirect to the Customer Request form page
+      window.location.href = "customer_letter_request_UI_V1.html";
+    }
+
+
+    function handleInquiry() {
+      alert("Redirecting to Status Inquiry page...");
+      // window.location.href = "customer_statues_checking_V1.html"; // Uncomment for redirection
+    }
+  </script>
+</body>
+</html>
